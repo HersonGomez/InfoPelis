@@ -21,12 +21,14 @@ public class PeliculasPresenter implements PresenterPeliculasView {
     @Override
     public void buscarDetallePeliculas() {
         carteleraView.mostrarProgressBar();
+        carteleraView.ocultarError();
         interactorPeliculasView.buscarDetallePeliculas();
     }
 
     @Override
     public void consultaFallida() {
-
+        carteleraView.ocultarProgressBar();
+        carteleraView.mostrarError();
     }
 
     @Override
@@ -34,5 +36,6 @@ public class PeliculasPresenter implements PresenterPeliculasView {
         carteleraView.ocultarProgressBar();
         carteleraView.mostrarRecycler();
         carteleraView.consultaPopulares(peliculas);
+        carteleraView.mostrarRecycler();
     }
 }

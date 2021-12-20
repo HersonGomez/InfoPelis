@@ -10,6 +10,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -24,9 +26,11 @@ import java.util.ArrayList;
 
 public class Cartelera extends AppCompatActivity implements CarteleraView {
 
-    private PresenterPeliculasView peliculasPresenter;
-    private RecyclerView        mRecyclerPopulares;
-    ProgressBar                 progressBarPopulares;
+    private PresenterPeliculasView  peliculasPresenter;
+    private RecyclerView            mRecyclerPopulares;
+    ProgressBar                     progressBarPopulares;
+    LinearLayout                    reintentar;
+    ImageView                       imageReintentar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +42,8 @@ public class Cartelera extends AppCompatActivity implements CarteleraView {
 
         mRecyclerPopulares      = findViewById(R.id.RecyclerPopulares);
         progressBarPopulares    = findViewById(R.id.progressBarPopulares);
+        reintentar              = findViewById(R.id.reintentar);
+        imageReintentar         = findViewById(R.id.imageReintentar);
 
         peliculasPresenter      = new PeliculasPresenter(this);
         buscarDetallePeliculas();
@@ -78,8 +84,19 @@ public class Cartelera extends AppCompatActivity implements CarteleraView {
         StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL);
         mRecyclerPopulares.setLayoutManager(staggeredGridLayoutManager);
 
-        //Mostrar Recycler
+        //Llenar Recycler
         RecyclerAdapter recyclerAdapter = new RecyclerAdapter(peliculas,this);
         mRecyclerPopulares.setAdapter(recyclerAdapter);
+    }
+
+    @Override
+    public void mostrarError() {
+        reintentar.setVisibility(View.VISIBLE);
+        imageReintentar.setOnClickListener(view -> buscarDetallePeliculas());
+    }
+
+    @Override
+    public void ocultarError() {
+        reintentar.setVisibility(View.GONE);
     }
 }

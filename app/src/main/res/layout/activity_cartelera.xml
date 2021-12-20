@@ -57,6 +57,37 @@
             android:visibility="gone">
         </androidx.recyclerview.widget.RecyclerView>
 
+        <LinearLayout
+            android:id="@+id/reintentar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Error en la conexión"
+                android:fontFamily="sans-serif-medium"
+                android:textSize="18dp"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Intente de nuevo"
+                android:fontFamily="sans-serif-medium"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                />
+            <ImageView
+                android:id="@+id/imageReintentar"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_baseline_autorenew_24"
+                />
+        </LinearLayout>
+
     </LinearLayout>
 
 </LinearLayout>

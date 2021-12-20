@@ -10,4 +10,6 @@ public interface CarteleraView {
     void mostrarRecycler();
     void buscarDetallePeliculas();
     void consultaPopulares(ArrayList<PeliculasResults> peliculas);
+    void mostrarError();
+    void ocultarError();
 }

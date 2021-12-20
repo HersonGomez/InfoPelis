@@ -26,7 +26,7 @@ public class InteractorPeliculas implements InteractorPeliculasView, Callback<Pe
     @Override
     public void onResponse(Call<Peliculas> call, Response<Peliculas> response) {
         if(!response.isSuccessful()){
-            System.out.println("Mensaje --> Consulta incorrecta");
+            presenterPeliculasView.consultaFallida();
             return;
         }
 
