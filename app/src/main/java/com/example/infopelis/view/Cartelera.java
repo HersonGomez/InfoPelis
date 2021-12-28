@@ -28,9 +28,10 @@ public class Cartelera extends AppCompatActivity implements CarteleraView {
 
     private PresenterPeliculasView  peliculasPresenter;
     private RecyclerView            mRecyclerPopulares;
-    ProgressBar                     progressBarPopulares;
-    LinearLayout                    reintentar;
-    ImageView                       imageReintentar;
+    private ProgressBar             progressBarPopulares;
+    private LinearLayout            reintentar;
+    private ImageView               imageReintentar;
+    private RecyclerAdapter         recyclerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,7 +86,7 @@ public class Cartelera extends AppCompatActivity implements CarteleraView {
         mRecyclerPopulares.setLayoutManager(staggeredGridLayoutManager);
 
         //Llenar Recycler
-        RecyclerAdapter recyclerAdapter = new RecyclerAdapter(peliculas,this);
+        recyclerAdapter = new RecyclerAdapter(peliculas,this);
         mRecyclerPopulares.setAdapter(recyclerAdapter);
     }
 

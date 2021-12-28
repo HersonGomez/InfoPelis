@@ -34,7 +34,7 @@ public class InteractorPeliculas implements InteractorPeliculasView, Callback<Pe
         assert peliculasData != null;
         ArrayList<PeliculasResults> peliculas = peliculasData.getResults();
 
-        if(peliculasData!=null){
+        if(peliculasData !=null){
 
             presenterPeliculasView.consultaPopulares(peliculas);
         }

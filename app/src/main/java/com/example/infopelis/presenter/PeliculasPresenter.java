@@ -34,7 +34,6 @@ public class PeliculasPresenter implements PresenterPeliculasView {
     @Override
     public void consultaPopulares(ArrayList<PeliculasResults> peliculas) {
         carteleraView.ocultarProgressBar();
-        carteleraView.mostrarRecycler();
         carteleraView.consultaPopulares(peliculas);
         carteleraView.mostrarRecycler();
     }

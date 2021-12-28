@@ -21,7 +21,7 @@ import java.util.ArrayList;
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.PeliculasViewHolder>{
 
     private ArrayList<PeliculasResults> results;
-    Context context;
+    private Context                     context;
 
     public RecyclerAdapter(ArrayList<PeliculasResults> results, Context context) {
         this.results = results;
@@ -54,9 +54,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Pelicu
     //Clase utilizada para definir y relacionar los elementos de la vista
     class PeliculasViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        ImageView imageViewPeliculas;
-        private  String url;
-        private  PeliculasResults position;
+        private  ImageView          imageViewPeliculas;
+        private  String             url;
+        private  PeliculasResults   position;
 
         public PeliculasViewHolder(@NonNull View itemView) {
             super(itemView);
